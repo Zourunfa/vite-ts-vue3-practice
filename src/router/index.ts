@@ -8,7 +8,9 @@ const routes = [
     component: () => import('../views/index.vue'),
     children: [
       {
-        path: 'discover'
+        path: 'discover',
+        name: 'discover',
+        component: () => import('../views/discover/index.vue')
       }
     ]
   }

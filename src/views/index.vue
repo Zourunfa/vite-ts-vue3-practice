@@ -2,9 +2,10 @@
 
 <template>
   <div class="player-index">首页</div>
+  <div class="box"></div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .logo {
   height: 6em;
   padding: 1.5em;
