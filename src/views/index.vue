@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+fetch('/api/get', { method: 'get' }).then((data) => {
+  console.log(data, '---data');
+});
+</script>
 
 <template>
   <div class="player-index">首页</div>
