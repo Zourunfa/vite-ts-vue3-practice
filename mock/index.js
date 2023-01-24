@@ -9,7 +9,7 @@ const listData = mockJs.mock({
       birth: '@time',
       content: '@cparagraph(5,15)',
       img_url: '@image("100x100","#FFE4B5","#fff","暂无图片")',
-      add_time: '@date(yyyy-MM-dd hh:mm:ss)',
+      add_time: '@date(yyyy-MM-dd hh:mm:s)',
     },
   ],
 });
