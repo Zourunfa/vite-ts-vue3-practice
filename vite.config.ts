@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import { viteMockServe } from 'vite-plugin-mock'
-import vitePluginMock from './plugins/vite-plugin-mock.js'
-// https://vitejs.dev/config/
+import { viteMockServe } from 'vite-plugin-mock'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+
 export default defineConfig({
-  plugins: [vue(), vitePluginMock()],
+  plugins: [vue(), viteMockServe(), vueSetupExtend()],
 
 })
