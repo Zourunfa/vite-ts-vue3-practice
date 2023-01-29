@@ -2,11 +2,12 @@
 import TreeMenu from './../components/TreeMenu/index.vue';
 import MenuItem from '../components/TreeMenu/MenuItem.vue';
 import SubMenu from '../components/TreeMenu/SubMemu.vue';
+import ReSubMenu from '../components/TreeMenu/ReSubMenu.vue';
 // fetch('/api/get', { method: 'get' }).then((data) => {
 //   console.log(data, '---data');
 // });
 
-interface MenuContext {
+export interface MenuContext {
   id: string;
   title: string;
   children?: Array<MenuContext>;
@@ -55,6 +56,26 @@ const MenuData: MenuContext[] = [
   {
     id: '5',
     title: '菜單5',
+    children: [
+      {
+        id: '5-1',
+        title: '菜單1',
+        children: [
+          {
+            id: '5-1-1',
+            title: '菜單1',
+          },
+          {
+            id: '5-1-2',
+            title: '菜單1',
+          },
+          {
+            id: '5-1-3',
+            title: '菜單1',
+          },
+        ],
+      },
+    ],
   },
 ];
 </script>
@@ -62,12 +83,12 @@ const MenuData: MenuContext[] = [
 <template>
   <div class="box">
     <TreeMenu>
-      <template v-for="item of MenuData">
-        <menu-item v-if="!item.children" :key="item.id">{{
-          item.title
-        }}</menu-item>
+      <template v-for="item of MenuData" :key="item.id">
+        <menu-item v-if="!item.children">{{ item.title }}</menu-item>
 
-        <SubMenu v-else :key="`sub-${item.id}`">
+        <ReSubMenu :data="item" v-else></ReSubMenu>
+
+        <!-- <SubMenu v-else :key="`sub-${item.id}`">
           <template #title>
             {{ item.title }}
           </template>
@@ -76,7 +97,7 @@ const MenuData: MenuContext[] = [
               {{ child.title }}
             </menu-item>
           </template>
-        </SubMenu>
+        </SubMenu> -->
       </template>
     </TreeMenu>
   </div>
