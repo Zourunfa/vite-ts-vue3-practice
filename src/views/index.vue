@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
+import Discover from './discover/index.vue';
 // fetch('/api/get', { method: 'get' }).then((data) => {
 //   console.log(data, '---data');
 // });
@@ -16,11 +16,8 @@ const format = (percentage: number) =>
         <ReSubMenu :data="item" v-else></ReSubMenu>
       </template>
     </TreeMenu> -->
-    <el-progress :percentage="50" :stroke-width="9" />
-    <!-- <el-progress :percentage="100" :format="format" />
-    <el-progress :percentage="100" status="success" />
-    <el-progress :percentage="100" status="warning" />
-    <el-progress :percentage="50" status="exception" /> -->
+    <!-- 分页 -->
+    <Discover />
   </div>
 </template>
 
