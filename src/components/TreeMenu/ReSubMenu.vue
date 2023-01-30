@@ -2,7 +2,7 @@
 import SubMenu from './SubMemu.vue';
 import MenuItem from './MenuItem.vue';
 import { defineProps } from 'vue';
-import { MenuContext } from '../../views/index.vue';
+import { MenuContext } from './data';
 
 export interface Props {
   data: MenuContext;
